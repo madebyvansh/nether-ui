@@ -1,5 +1,7 @@
 @import "tailwindcss";
+
 @import "tw-animate-css";
+
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -9,11 +11,12 @@
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-ibm);
-  --font-heading: var(--font-sedan);
+  --font-heading: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 
@@ -30,6 +33,7 @@
   --color-accent-foreground: var(--accent-foreground);
 
   --color-destructive: var(--destructive);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -44,70 +48,67 @@
 }
 
 :root {
-  --pearl: #f0ead6;
-  --scarlet: #ff1637;
-  --obsidian: #121212;
-  --mist: #f2f4f3;
+  --sunset-coral: #ff5b3e;
+  --honey-yellow: #ffd84d;
+  --ink-black: #111111;
+  --buttermilk: #fff8e8;
+  --background: var(--buttermilk);
+  --foreground: var(--ink-black);
 
-  /* Light */
-  --background: #ffffff;
-  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: var(--ink-black);
 
-  --card: var(--pearl);
-  --card-foreground: #000000;
+  --popover: var(--ink-black);
+  --popover-foreground: var(--buttermilk);
 
-  --popover: var(--obsidian);
-  --popover-foreground: #ffffff;
-
-  --primary: var(--scarlet);
+  --primary: var(--sunset-coral);
   --primary-foreground: #ffffff;
 
-  --secondary: var(--mist);
-  --secondary-foreground: #000000;
+  --secondary: var(--honey-yellow);
+  --secondary-foreground: var(--ink-black);
 
-  --muted: var(--mist);
-  --muted-foreground: #666666;
+  --muted: #f2ead8;
+  --muted-foreground: #665f52;
 
-  --accent: var(--pearl);
-  --accent-foreground: #000000;
+  --accent: var(--buttermilk);
+  --accent-foreground: var(--ink-black);
 
-  --border: #000000;
-  --input: #d9d9d9;
-  --ring: var(--scarlet);
+  --destructive: var(--sunset-coral);
 
-  --destructive: var(--scarlet);
+  --border: var(--ink-black);
+  --input: #d8d0c0;
+  --ring: var(--sunset-coral);
 
   --radius: 0.625rem;
 }
 
 .dark {
-  /* Dark */
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: var(--ink-black);
+  --foreground: var(--buttermilk);
 
-  --card: var(--obsidian);
-  --card-foreground: #ffffff;
+  --card: #181818;
+  --card-foreground: var(--buttermilk);
 
-  --popover: var(--pearl);
-  --popover-foreground: #000000;
+  --popover: var(--buttermilk);
+  --popover-foreground: var(--ink-black);
 
-  --primary: var(--scarlet);
+  --primary: var(--sunset-coral);
   --primary-foreground: #ffffff;
 
-  --secondary: #181818;
-  --secondary-foreground: #ffffff;
+  --secondary: var(--honey-yellow);
+  --secondary-foreground: var(--ink-black);
 
-  --muted: #181818;
-  --muted-foreground: #a3a3a3;
+  --muted: #1d1d1d;
+  --muted-foreground: #aaa396;
 
-  --accent: var(--obsidian);
-  --accent-foreground: #ffffff;
+  --accent: #181818;
+  --accent-foreground: var(--buttermilk);
+
+  --destructive: var(--sunset-coral);
 
   --border: #333333;
   --input: #333333;
-  --ring: var(--scarlet);
-
-  --destructive: var(--scarlet);
+  --ring: var(--sunset-coral);
 }
 
 @layer base {

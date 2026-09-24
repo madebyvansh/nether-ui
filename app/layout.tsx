@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Average_Sans, Commissioner, IBM_Plex_Sans, Montserrat, Poppins } from "next/font/google";
+import { IBM_Plex_Sans, Playfair_Display } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+
 import "./globals.css";
 
-const sedan = Poppins({
-  variable: "--font-sedan",
+const playflair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400"],
+  style: ["italic", "normal"],
 });
 
 const ibm = IBM_Plex_Sans({
@@ -18,17 +21,28 @@ export const metadata: Metadata = {
   description: "A modern, open-source UI library for React.",
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface LayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html
       lang="en"
-      className={`${sedan.variable} ${ibm.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${playflair.variable} ${ibm.variable}`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
